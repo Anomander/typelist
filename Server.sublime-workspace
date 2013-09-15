@@ -1,0 +1,964 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"_",
+				"_sentinel"
+			],
+			[
+				"re",
+				"reverse"
+			],
+			[
+				"fi",
+				"first"
+			],
+			[
+				"de",
+				"depIt"
+			],
+			[
+				"Package",
+				"PackageId_t"
+			],
+			[
+				"Simple",
+				"SimplePackage1"
+			],
+			[
+				"uui",
+				"uuid"
+			],
+			[
+				"Pack",
+				"PackageId_t"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"Pac",
+				"Package	class"
+			],
+			[
+				"Dep",
+				"DependencyUnsatisfiedException"
+			],
+			[
+				"Depend",
+				"DependencyTracker"
+			],
+			[
+				"Depe",
+				"DependencyTracker	class"
+			],
+			[
+				"De",
+				"DependencyTracker	class"
+			],
+			[
+				"Pa",
+				"PartC	class"
+			],
+			[
+				"t",
+				"tp	template <typename ${1:_InputIter}>"
+			],
+			[
+				"ma",
+				"main	main()"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/main.cpp",
+			"settings":
+			{
+				"buffer_size": 2382,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/_private.h",
+			"settings":
+			{
+				"buffer_size": 1770,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/algorithm/for_each.h",
+			"settings":
+			{
+				"buffer_size": 722,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tst/EraseEraseAllTest.hpp",
+			"settings":
+			{
+				"buffer_size": 1048,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/algorithm/equal.h",
+			"settings":
+			{
+				"buffer_size": 959,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Server.sublime-project",
+			"settings":
+			{
+				"buffer_size": 391,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/algorithm/erase.h",
+			"settings":
+			{
+				"buffer_size": 1259,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tst/EqualsTest.hpp",
+			"settings":
+			{
+				"buffer_size": 774,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tst/testRunner.cpp",
+			"settings":
+			{
+				"buffer_size": 189,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/algorithm.h",
+			"settings":
+			{
+				"buffer_size": 335,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"command_palette":
+	{
+		"height": 79.0,
+		"selected_items":
+		[
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"bla",
+				"Git: Blame"
+			],
+			[
+				"add",
+				"Git: Add Current File"
+			],
+			[
+				"blam",
+				"Git: Blame"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ssc",
+				"Set Syntax: C++"
+			],
+			[
+				"gitb",
+				"Set Syntax: Git Blame"
+			],
+			[
+				"git",
+				"Set Syntax: Git Graph"
+			],
+			[
+				"cle",
+				"Build: Clean"
+			],
+			[
+				"term",
+				"Preferences: Terminal Settings – Default"
+			],
+			[
+				"pci",
+				"Package Control: Install Package"
+			],
+			[
+				"cpp",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"cpphe",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"cppso",
+				"Snippet: CppClassSourceFile"
+			],
+			[
+				"gitto",
+				"Git: Toggle Annotations"
+			],
+			[
+				"gitst",
+				"Git: Status"
+			],
+			[
+				"git sta",
+				"Git: Stash Apply"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git ad",
+				"Git: Add Current File"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"gitadd",
+				"Git: Add Current File"
+			],
+			[
+				"gits",
+				"Git: Status"
+			],
+			[
+				"cpph",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"gitt",
+				"Git: Toggle Annotations"
+			],
+			[
+				"gitAno",
+				"Git: Toggle Annotations"
+			],
+			[
+				"gitT",
+				"Git: Toggle Annotations"
+			],
+			[
+				"giti",
+				"Git: Gui"
+			],
+			[
+				"ssc++",
+				"Set Syntax: C++"
+			],
+			[
+				"gdbde",
+				"Preferences: SublimeGDB Settings – Default"
+			],
+			[
+				"gdb",
+				"Set Syntax: GDB Session"
+			],
+			[
+				"pcin",
+				"Package Control: Install Package"
+			],
+			[
+				"cpphea",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"cpps",
+				"Snippet: CppClassSourceFile"
+			],
+			[
+				"cppsou",
+				"Snippet: CppClassSourceFile"
+			],
+			[
+				"ss",
+				"Set Syntax: Makefile"
+			],
+			[
+				"ssmake",
+				"Set Syntax: Makefile"
+			],
+			[
+				"snicp",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"snicpp",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"sni",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"snic",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"snicpps",
+				"Snippet: CppClassSourceFile"
+			],
+			[
+				"snicpph",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"snicphe",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"sniun",
+				"Snippet: untitled"
+			],
+			[
+				"sncpp",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"Snippet: cpp",
+				"Snippet: CppClassHeaderFile"
+			],
+			[
+				"Snippet: ",
+				"Snippet: #ifndef … #define … #endif"
+			],
+			[
+				"Sublime",
+				"Preferences: SublimeClang Settings – Default"
+			],
+			[
+				"pip",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/Server.sublime-project",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/include/_private.h",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/include/algorithm/for_each.h",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/tst/testRunner.cpp",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/Makefile",
+		"/home/anomander/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/tst/Packages/PackageMasterTest.hpp",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/src/Packages/Package.cpp",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/src/Scheduler/SchedulerFactory.h",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/src/Packages/PackageMaster.cpp",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/src/Packages/PackageMaster.h",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/src/Packages/Exceptions/DependencyUnsatisfiedException.h",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/src/Packages/PackageDependencyTrackerFactory.h",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/src/Packages/AbstractPackageDependencyTracker.h",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/src/Packages/Package.h",
+		"/home/anomander/Documents/Dev/Cpp/Prj/Srv2/src/Packages/Dependency.h",
+		"/home/anomander/.config/sublime-text-2/Packages/SublimeGDB/SublimeGDB.sublime-settings",
+		"/home/anomander/.config/sublime-text-2/Packages/Terminal/Terminal.sublime-settings",
+		"/usr/include/c++/4.7/set",
+		"/usr/include/c++/4.7/bits/stl_set.h",
+		"/home/anomander/Dev/Projects/Server/tst/Packages/PackageMasterTest.hpp",
+		"/usr/include/c++/4.7/functional",
+		"/home/anomander/Dev/Projects/Server/include/pch.h",
+		"/usr/include/c++/4.7/ostream",
+		"/usr/include/c++/4.7/bits/stl_algo.h",
+		"/usr/include/c++/4.7/bits/range_access.h",
+		"/usr/include/c++/4.7/bits/unordered_map.h",
+		"/usr/include/c++/4.7/bits/list.tcc",
+		"/home/anomander/Dev/Projects/Server/src/Utility/TypeTraits.h",
+		"/home/anomander/Dev/Projects/Server/src/Packages/Package.cpp",
+		"/home/anomander/Dev/Projects/Server/src/Server.cpp",
+		"/home/anomander/Dev/Projects/Server/src/Packages/PackageMaster.h",
+		"/usr/include/c++/4.7/bits/functional_hash.h",
+		"/home/anomander/Dev/Projects/Server/Makefile",
+		"/home/anomander/Dev/Projects/Server/src/Scheduler/IScheduler.h",
+		"/home/anomander/Dev/Projects/Server/src/Scheduler/SchedulerFactory.h",
+		"/home/anomander/Dev/Projects/Server/src/Base/Time.h",
+		"/home/anomander/Dev/Projects/Server/src/Scheduler/INotifier.h",
+		"/home/anomander/Dev/Projects/Server/src/Scheduler/impl/TimerScheduledEvent.h",
+		"/home/anomander/Dev/Projects/Server/src/Scheduler/AbstractScheduledEvent.h",
+		"/home/anomander/Dev/Projects/Server/src/Scheduler/impl/NonThreadedScheduler.cpp",
+		"/home/anomander/Dev/Projects/Server/src/Scheduler/impl/NonThreadedScheduler.h",
+		"/usr/include/c++/4.7.0/mutex",
+		"/usr/include/c++/4.7/chrono",
+		"/home/anomander/Dev/Projects/Server/tst/testRunner.cpp",
+		"/usr/include/c++/4.7/boost/uuid/name_generator.hpp",
+		"/usr/include/c++/4.7/boost/uuid/uuid.hpp",
+		"/usr/include/c++/4.7/boost/uuid/uuid_serialize.hpp",
+		"/tmp/uuid.txt",
+		"/usr/include/c++/4.7/boost/uuid/uuid_generators.hpp",
+		"/usr/include/c++/4.7/boost/uuid/string_generator.hpp",
+		"/home/anomander/.config/sublime-text-2/Packages/User/CppClassHeaderFile.sublime-snippet",
+		"/home/anomander/.config/sublime-text-2/Packages/Color Scheme - Default/Monokai.tmTheme",
+		"/home/anomander/.config/sublime-text-2/Packages/Color Scheme - Default/Zenburnesque.tmTheme",
+		"/home/anomander/.config/sublime-text-2/Packages/Color Scheme - Default/Solarized (Light).tmTheme",
+		"/home/anomander/.config/sublime-text-2/Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+		"/usr/include/c++/4.7/cstdint",
+		"/home/anomander/Dev/Projects/Server/src/Scheduler/EventID.h",
+		"/usr/include/c++/4.7/tr1/cstdint",
+		"/usr/include/c++/4.7/tr1/stdint.h",
+		"/usr/include/c++/4.7/stdint.h",
+		"/home/anomander/Dev/Projects/Server/src/Scheduler/IScheduler",
+		"/home/anomander/Dev/Projects/Server/src/Packages/DependencyTracker.h",
+		"/home/anomander/Dev/Projects/Server/tst/Packages/DependencyTrackerTest.cpp",
+		"/usr/include/c++/v1/gtest/internal/gtest-port.h",
+		"/usr/include/c++/v1/tr1/tuple",
+		"/home/anomander/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/usr/include/c++/4.7/stdexcept",
+		"/usr/include/c++/4.7.0/exception",
+		"/usr/include/c++/v1/algorithm",
+		"/home/anomander/Dev/Projects/Server/src/Parts/DependencyTracker.cpp",
+		"/home/anomander/Dev/Projects/Server/src/Parts/DependencyTracker.h",
+		"/home/anomander/Dev/Projects/Server/src/Parts/Package.h",
+		"/home/anomander/Dev/Projects/Server/src/Parts/Package.cpp",
+		"/home/anomander/Dev/Projects/Server/src/Parts/PartManager.h",
+		"/home/anomander/Dev/Projects/Server/src/Parts/Dependency.h",
+		"/home/anomander/Dev/Projects/Server/nbproject/configurations.xml",
+		"/home/anomander/Dev/Projects/Server/src/Server.h",
+		"/home/anomander/Dev/Projects/Server/src/Parts/PartManager",
+		"/home/anomander/Dev/Projects/Server/src/Parts/Dependency.cpp",
+		"/home/anomander/Dev/Projects/Server/nbproject/Package-Default.bash",
+		"/home/anomander/.config/sublime-text-2/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/home/anomander/Dev/Projects/Server/src/Parts/DependencyTracker",
+		"/home/anomander/Dev/Projects/ClangTest/Makefile",
+		"/home/anomander/Dev/Projects/ClangTest/src_Classes_Server.cpp",
+		"/home/anomander/Dev/Projects/ClangTest/src/Classes/Server.h",
+		"/home/anomander/Dev/Projects/ClangTest/src/Classes/Server.cpp",
+		"/home/anomander/.config/sublime-text-2/Packages/User/CppClassSourceFile.sublime-snippet",
+		"/home/anomander/Dev/Projects/ClangTest/src/Contexts/ContextRepository.cpp",
+		"/home/anomander/Dev/Projects/ClangTest/src/Contexts/ContextRepository.h",
+		"/home/anomander/Dev/Projects/ClangTest/src/Classes/Makefile.mk",
+		"/home/anomander/Dropbox/Dev/Tools/Sublime2/sublime_plugin.pyc",
+		"/home/anomander/Dev/Projects/ClangTest/src/main.h",
+		"/home/anomander/.config/sublime-text-2/Packages/User/untitled.sublime-snippet",
+		"/home/anomander/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/tmp/libstdc++4.7-clang11.patch",
+		"/tmp/libstdc++4.7-clang11-1.patch",
+		"/home/anomander/Dev/Projects/ClangTest/CLangTest",
+		"/usr/include/c++/4.6/chrono",
+		"/home/anomander/.config/sublime-text-2/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"false",
+			"foo",
+			"true",
+			"<>",
+			"EraseTests",
+			"EraseEraseAllTest",
+			"\ntemplate<typename Head, typename... Tail>\nstruct equal<list<Head, Tail...>, list<Head, Tail...>> {\n	enum { value = true };\n};\n",
+			"find",
+			"\"\n",
+			"typelist::",
+			"list",
+			"reverse_iterator",
+			"begin",
+			"rbegin",
+			"erase",
+			"Required",
+			"SimplePackage2",
+			"endif",
+			"SimplePackage1",
+			"PackageMaster",
+			"string",
+			"AbstractScheduledCallbackEvent",
+			"AbstractScheduledCallback",
+			"#include <gtest/gtest.h>\n",
+			"DEPENDENCYTRACKERTEST",
+			"DependencyTrackerTest",
+			"DEPENDENCYTRACKERTEST",
+			"DependencyTrackerTest",
+			"Tracker",
+			"tracker",
+			"Tracker",
+			"DependencyTracker",
+			"__GNUC",
+			"__GNUC__",
+			"GTEST_GCC_VER_",
+			"ctrl+b",
+			"		static_assert(std::is_base_of<Package, DependOn>::value, \n			\"DependOn must be a sub-class of Package\");\n",
+			"		static_assert(std::is_base_of<Package, DependOn>::value, \"DependOn must be a sub-class of Package\");\n",
+			"/**/*.",
+			"__Package_H__",
+			"Part",
+			"Parts",
+			"	static_assert(std::is_base_of<Part, DependOn>::value,\n		\"DependOn must be a sub-class of Part\");\n",
+			"{1",
+			"/path/to/libcxx",
+			"Bar"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Optional",
+			"AbstractScheduledEvent",
+			"AbstractScheduledCallbackEvent",
+			"Package",
+			"Packages",
+			"{3"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2382,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								715,
+								715
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "include/_private.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1770,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1203,
+								1203
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 351.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "include/algorithm/for_each.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 722,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								352,
+								352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tst/EraseEraseAllTest.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1048,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								202,
+								202
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "include/algorithm/equal.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								257,
+								257
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Server.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								76,
+								76
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "include/algorithm/erase.h",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "tst/EqualsTest.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 774,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288,
+								288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "tst/testRunner.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "include/algorithm.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								92,
+								92
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clang":
+	{
+		"height": 167.0
+	},
+	"output.exec":
+	{
+		"height": 249.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 112.0
+	},
+	"project": "Server.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"include/algorithm/equal.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/Dev/Cpp/Prj/Server/Server.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 125.0,
+		"selected_items":
+		[
+		],
+		"width": 378.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

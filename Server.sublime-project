@@ -1,0 +1,19 @@
+{
+    "folders":
+    [
+        {
+            "path": "/home/anomander/Documents/Dev/Cpp/Prj/Srv2"
+        }
+    ],
+    "settings":
+    {
+         "sublimegdb_workingdir": "${folder:${project_path:GTest}}",
+         // NOTE: You MUST provide --interpreter=mi for the plugin to work
+         "sublimegdb_commandline": "gdb --interpreter=mi ./GTest"
+    },
+    "build_systems": [
+        {
+            "name": "Make",
+        }
+    ]
+}
