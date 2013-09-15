@@ -35,12 +35,10 @@ using sort_test_list = list <
 >;
 
 namespace Sorts {
+    template <typename T, typename U>
     struct CompareBySize {
-        template <typename T, typename U>
-        struct less {
-            enum {
-                value = sizeof(T) < sizeof(U)
-            };
+        enum {
+            value = sizeof(T) < sizeof(U)
         };
     };
 }

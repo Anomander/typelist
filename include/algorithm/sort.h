@@ -32,22 +32,21 @@ namespace typelist {
  * the provided list when a provided comparison
  * operation is applied.
  */
-template<typename TL, typename Comp> struct min;
+template<typename TL, template<typename,typename>class Comp> struct min;
 
 /**
  * Sorts the provided list in the ascending order,
  * using the provided comparison operation.
  * Comparison should be defined as:
  *
+ * template <typename T, typename U>
  * struct Compare {
- *     template <typename T, typename U>
- *     struct less {
  *     enum {
  *         value = [non-0 means less];// like sizeof(T) < sizeof(U)
  *     };
  * };
  */
-template <typename TL, typename Comp> struct sort;
+template <typename TL, template<typename,typename>class Comp> struct sort;
 
 /**
  * General case.
@@ -57,7 +56,7 @@ template <typename TL, typename Comp> struct sort;
  *
  * Sort is O(n^2).
  */
-template <typename TL, typename Comp>
+template <typename TL, template<typename,typename>class Comp>
 struct sort {
 private:
     using smallest = typename min < TL, Comp > :: type;
@@ -71,7 +70,7 @@ public:
 /**
  * Specialization to end recursion.
  */
-template <typename Comp>
+template <template<typename,typename>class Comp>
 struct sort<_private::_sentinel, Comp> {
     using type = _private::_sentinel;
 };
@@ -80,14 +79,15 @@ struct sort<_private::_sentinel, Comp> {
  * General case.
  * Compares the head and recurses into the tail.
  */
-template<typename Head, typename... Tail, typename Comp>
+template<typename Head, typename... Tail, template<typename,typename>class Comp>
 struct min<list<Head, Tail...>, Comp> {
 private:
     using TL = list<Head, Tail...>;
     using next = typename min <typename TL :: tail, Comp> :: type;
 public:
     using type = typename std::conditional <
-        Comp :: template less<typename TL :: head, next> :: value || ! Comp :: template less<next, typename TL :: head> :: value,
+        Comp<typename TL :: head, next> :: value 
+           || ! Comp<next, typename TL :: head> :: value,
         typename TL :: head, 
         next
     > :: type;
@@ -96,7 +96,7 @@ public:
 /**
  * Specialization to end recursion.
  */
-template<typename T, typename Comp>
+template<typename T, template<typename,typename>class Comp>
 struct min <list<T>, Comp> {
     using type = T;
 };
