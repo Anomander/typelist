@@ -45,14 +45,9 @@ template<typename TL, template<typename,typename>class Comp> struct min;
  *         value = [non-0 means less];// like sizeof(T) < sizeof(U)
  *     };
  * };
- */
-template <typename TL, template<typename,typename>class Comp> struct sort;
-
-/**
- * General case.
- * Finds the smallest element and removes from the list.
- * Places the element in the head of the result.
- * Recurses to sort the remainder and appends it as tail.
+ *
+ * Stable, i.e. does not change the relative order of equal 
+ * items.
  *
  * NOTE: Sort will not fuction properly if the list contains
  *       heterogenous items relative to the comparison 
@@ -61,6 +56,14 @@ template <typename TL, template<typename,typename>class Comp> struct sort;
  *       branches, if using std::is_base_of as comparator).
  * 
  * Sort is O(n^2).
+ */
+template <typename TL, template<typename,typename>class Comp> struct sort;
+
+/**
+ * General case.
+ * Finds the smallest element and removes from the list.
+ * Places the element in the head of the result.
+ * Recurses to sort the remainder and appends it as tail.
  */
 template <typename TL, template<typename,typename>class Comp>
 struct sort {

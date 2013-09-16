@@ -30,6 +30,7 @@
 #include "map_test.hpp"
 #include "reverse_test.hpp"
 #include "sort_test.hpp"
+#include "unique_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
