@@ -29,6 +29,7 @@
 #include "for_each_test.hpp"
 #include "map_test.hpp"
 #include "reverse_test.hpp"
+#include "replace_test.hpp"
 #include "sort_test.hpp"
 #include "unique_test.hpp"
 

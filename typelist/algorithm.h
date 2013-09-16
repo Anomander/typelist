@@ -32,6 +32,7 @@
 #include "typelist/algorithm/find.h"
 #include "typelist/algorithm/for_each.h"
 #include "typelist/algorithm/map.h"
+#include "typelist/algorithm/replace.h"
 #include "typelist/algorithm/reverse.h"
 #include "typelist/algorithm/sort.h"
 #include "typelist/algorithm/unique.h"
