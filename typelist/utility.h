@@ -114,6 +114,11 @@ struct at <i, _private::_sentinel> {
     using type = _private::_sentinel;
 };
 
+/**
+ * Inserts type at specified position.
+ * If position is within bounds, adds the item at that position.
+ * Otherwise item becomes the last in the list.
+ */
 template<unsigned i, typename T, typename TL> struct insert_at {
     using type = typename _private::_make_list<
         typename TL::head,
@@ -121,9 +126,20 @@ template<unsigned i, typename T, typename TL> struct insert_at {
     >::type;    
 };
 
+/**
+ * Specialization for the case when position is within bounds.
+ */
 template<typename T, typename TL> 
 struct insert_at<0, T, TL> {
     using type = typename _private::_make_list < T, TL > :: type;
+};
+
+/**
+ * Specialization for the case when position is out of bounds.
+ */
+template<unsigned i, typename T> 
+struct insert_at<i, T, _private::_sentinel> {
+    using type = typename _private::_make_list < T > :: type;
 };
 
 }
