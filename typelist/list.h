@@ -23,7 +23,7 @@
 #ifndef __typelist_list_h__
 #define __typelist_list_h__
 
-#include "_private.h"
+#include "typelist/_private.h"
 
 namespace typelist {
 

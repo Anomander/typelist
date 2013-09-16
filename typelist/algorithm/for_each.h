@@ -20,50 +20,57 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#ifndef __typelist_algorithm_map_h__
-#define __typelist_algorithm_map_h__
+#ifndef __typelist_algorithm_for_each_h__
+#define __typelist_algorithm_for_each_h__
 
-#include "_private.h"
+#include "typelist/_private.h"
 
 namespace typelist {
 
 /**
- * Provides the ability to create a type list from
- * another by mapping elements of the original list
- * to elements of the new ones.
- * The mapping should be defined as follows:
- * 
- * struct Mapper { 
- *     template<typename T> 
- *     using type = [mapped_type]; // like std::pair<T,T>
+ * Cycles through the list and runs the provided operation
+ * on each element.
+ * The operation should be defined as:
+  *   
+ * struct Iterator { 
+  *   template<typename Type, typename Arg0, typename Arg1, typename... ArgN > 
+  *   static void run (Arg0 arg0, Arg1 arg1, ArgN... argn) { 
+  *       // Do stuff;
+  *   } 
  * };
+ *
+ * The parameters required by the method `run` should match those
+ * that will be passed to
+ *
+ * for_each <the_list> :: run <Iterator> (arg0, arg1, arg2, arg3 [, ...]);
  */
-template<typename TL, typename Conv>
-struct map;
+template <typename T> struct for_each;
 
 /**
  * General case.
- * Maps the head and recurses to the tail.
+ * Runs the operation on the head and recurses into the tail.
  */
-template<typename C, typename T, typename... Args>
-struct map <list<T, Args...>, C> {
+template <typename T, typename... TLArgs>
+struct for_each <list <T, TLArgs...> > {
 private:
-    using next = 
-        typename map <typename list<T, Args...> :: tail, C> :: type;
+    using TL = list <T, TLArgs...>;
 public:
-    using type = typename _private::_make_list < 
-        typename _private::_make_list < typename C::template type<T>, next > :: type
-    > :: type;
+    template <typename Iterator, typename... Args>
+    static void run (Args... args) {
+        Iterator :: template run <typename TL :: head>(args...);
+        for_each <typename TL :: tail> :: template run <Iterator>(args...);
+    }
 };
 
 /**
  * Specialization to end recursion.
  */
-template<typename C>
-struct map <_private::_sentinel, C> {
-    using type = _private::_sentinel;
+template <>
+struct for_each <_private::_sentinel> {
+    template <typename Iterator, typename... Args>
+    static void run (Args... args) {}
 };
 
 }
 
-#endif//__typelist_algorithm_map_h__
+#endif//__typelist_algorithm_for_each_h__

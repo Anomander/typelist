@@ -23,7 +23,7 @@
 #ifndef __typelist_algorithm_erase_h__
 #define __typelist_algorithm_erase_h__
 
-#include "_private.h"
+#include "typelist/_private.h"
 
 namespace typelist {
 
@@ -61,6 +61,42 @@ struct erase <T, list <Head, Tail...>> {
  */
 template<typename T>
 struct erase <T, _private::_sentinel> {
+    using type = _private::_sentinel;
+};
+
+/**
+ * Removes the type at the provided position from the list.
+ * Safe to use with out-of-bounds index.
+ */
+template<unsigned i, typename TL> struct erase_at;
+
+/**
+ * Recursive specialization for the general case.
+ */
+template<unsigned i, typename Head, typename... Tail> 
+struct erase_at<i, list<Head, Tail...>> {
+    using type = typename _private::_make_list<
+        Head,
+        typename erase_at < 
+            i-1, 
+            typename _private::_make_list<Tail...>::type
+        > :: type
+    > :: type;
+};
+
+/**
+ * Specialization for the case when index is found.
+ */
+template<typename Head, typename... Tail> 
+struct erase_at <0, list<Head, Tail...>> {
+    using type = typename list< Head, Tail...> :: tail;
+};
+
+/**
+ * Specialization for the case when index is NOT found.
+ */
+template<unsigned i> 
+struct erase_at <i, _private::_sentinel> {
     using type = _private::_sentinel;
 };
 

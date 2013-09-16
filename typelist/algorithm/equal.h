@@ -23,7 +23,7 @@
 #ifndef __typelist_algorithm_equal_h__
 #define __typelist_algorithm_equal_h__
 
-#include "_private.h"
+#include "typelist/_private.h"
 
 #include <utility>
 

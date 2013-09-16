@@ -23,7 +23,7 @@
 #include <gtest/gtest.h>
 #include "creation_test.hpp"
 #include "equal_test.hpp"
-#include "erase_erase_all_test.hpp"
+#include "erase_test.hpp"
 #include "filter_test.hpp"
 #include "find_test.hpp"
 #include "for_each_test.hpp"

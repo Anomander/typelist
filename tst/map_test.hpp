@@ -23,21 +23,12 @@
 #ifndef __tst_map_test_hpp__
 #define __tst_map_test_hpp__
 
-#include "list.h"
-#include "algorithm.h"
-
-using namespace typelist;
+#include "test_common.h"
 
 using map_test_list = list <int, char, float>;
 
-namespace Maps {
-    struct PairWithSame {
-        template<typename T>
-        using type = std::pair<T,T>;  
-    };
-}
 TEST(map_tests, SimpleTest) {
-    using f = map <map_test_list, Maps::PairWithSame>::type;
+    using f = map <map_test_list, test_helpers::PairWithSame>::type;
     EXPECT_EQ(length<map_test_list>::value, length<f>::value);
     bool eq = equal<
         f, 
@@ -47,7 +38,7 @@ TEST(map_tests, SimpleTest) {
 }
 
 TEST(map_tests, MapEmpty) {
-    using f = map< erase <int, list<int>>::type, Maps::PairWithSame>::type;
+    using f = map< erase <int, list<int>>::type, test_helpers::PairWithSame>::type;
     EXPECT_EQ(0, length<f>::value);
 }
 

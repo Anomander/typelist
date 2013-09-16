@@ -1,7 +1,7 @@
 # flags
 # CC=clang++ -std=c++11 -stdlib=libc++ -lpthread
 CC=g++ -std=c++11 -pthread
-CFLAGS=-c -g3 -O0 -Wall -Isrc -Iinclude
+CFLAGS=-c -g3 -O0 -Wall -I.
 LDFLAGS=
 
 # tests
@@ -16,7 +16,7 @@ all: $(TESTSOURCES) $(TESTEXECUTABLE)
 $(TESTEXECUTABLE): $(TESTOBJECTS) $(OBJECTS)
 	$(CC) $(LDFLAGS) $(TESTOBJECTS) -lgtest $(patsubst obj/main.o, ,$(OBJECTS)) -o $(TESTEXECUTABLE)
 
-obj/tst/%.o : tst/%.cpp tst/*test.hpp include/**/*.h
+obj/tst/%.o : tst/%.cpp tst/*test.hpp tst/test_common.h typelist/**/*.h
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $< -lgtest -o $@
 

@@ -20,42 +20,50 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#ifndef __typelist_utility_h__
-#define __typelist_utility_h__
+#ifndef __typelist_algorithm_map_h__
+#define __typelist_algorithm_map_h__
 
-#include "_private.h"
+#include "typelist/_private.h"
 
-/**
- * Utilities for working with lists.
- */
 namespace typelist {
 
 /**
- * Returns the number of elements in the list.
+ * Provides the ability to create a type list from
+ * another by mapping elements of the original list
+ * to elements of the new ones.
+ * The mapping should be defined as follows:
+ * 
+ * struct Mapper { 
+ *     template<typename T> 
+ *     using type = [mapped_type]; // like std::pair<T,T>
+ * };
  */
-template <typename TL> struct length;
+template<typename TL, typename Conv>
+struct map;
 
 /**
- * Specialization for the general case.
- * Calculates the length of the tail and adds 1.
+ * General case.
+ * Maps the head and recurses to the tail.
  */
-template <typename T, typename... Args>
-struct length< list<T, Args...> > {
-    enum {
-        value = length<typename list<T, Args...> :: tail> :: value + 1
-    };
+template<typename C, typename T, typename... Args>
+struct map <list<T, Args...>, C> {
+private:
+    using next = 
+        typename map <typename list<T, Args...> :: tail, C> :: type;
+public:
+    using type = typename _private::_make_list < 
+        typename _private::_make_list < typename C::template type<T>, next > :: type
+    > :: type;
 };
 
 /**
  * Specialization to end recursion.
  */
-template <>
-struct length<_private::_sentinel> {
-    enum {
-        value = 0
-    };
+template<typename C>
+struct map <_private::_sentinel, C> {
+    using type = _private::_sentinel;
 };
 
 }
 
-#endif//__typelist_utility_h__
+#endif//__typelist_algorithm_map_h__

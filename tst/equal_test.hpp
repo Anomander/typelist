@@ -23,10 +23,7 @@
 #ifndef __tst_equals_test__hpp__
 #define __tst_equals_test__hpp__
 
-#include "list.h"
-#include "algorithm.h"
-
-using namespace typelist;
+#include "test_common.h"
 
 TEST(equal_tests, TestEqualsSimple) {
     auto value = (bool) equal< list<int>, list<int> >::value;

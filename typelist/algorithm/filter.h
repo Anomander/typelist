@@ -20,57 +20,54 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#ifndef __typelist_algorithm_for_each_h__
-#define __typelist_algorithm_for_each_h__
+#ifndef __typelist_algorithm_filter_h__
+#define __typelist_algorithm_filter_h__
 
-#include "_private.h"
+#include "typelist/_private.h"
 
 namespace typelist {
 
 /**
- * Cycles through the list and runs the provided operation
- * on each element.
- * The operation should be defined as:
-  *   
- * struct Iterator { 
-  *   template<typename Type, typename Arg0, typename Arg1, typename... ArgN > 
-  *   static void run (Arg0 arg0, Arg1 arg1, ArgN... argn) { 
-  *       // Do stuff;
-  *   } 
+ * Creates the list from the provided one which only contains
+ * elements that passed the provided filter.
+ * The format of the filter is expected to be like this:
+ *
+ * template<typename T>
+ * struct|class Filter {
+  *   enum { value = true|false|0|non-0 };
  * };
- *
- * The parameters required by the method `run` should match those
- * that will be passed to
- *
- * for_each <the_list> :: run <Iterator> (arg0, arg1, arg2, arg3 [, ...]);
  */
-template <typename T> struct for_each;
+template<typename TL, template<typename>class Comp> struct filter;
 
 /**
  * General case.
- * Runs the operation on the head and recurses into the tail.
+ * Filters the head and recurses into the tail.
  */
-template <typename T, typename... TLArgs>
-struct for_each <list <T, TLArgs...> > {
+template<template<typename>class Comp, typename T, typename... Args>
+struct filter <list<T, Args...>, Comp> {
 private:
-    using TL = list <T, TLArgs...>;
+    using next = 
+        typename filter <typename list<T, Args...> :: tail, Comp> :: type;
 public:
-    template <typename Iterator, typename... Args>
-    static void run (Args... args) {
-        Iterator :: template run <typename TL :: head>(args...);
-        for_each <typename TL :: tail> :: template run <Iterator>(args...);
-    }
+    using type =    
+        typename std::conditional <
+            Comp<T> :: value,
+            typename _private::_make_list < T, next > :: type,
+            typename _private::_make_list < 
+                typename _private::_head<next> :: type, 
+                typename _private::_tail<next> :: type 
+            > :: type
+        > :: type;
 };
 
 /**
  * Specialization to end recursion.
  */
-template <>
-struct for_each <_private::_sentinel> {
-    template <typename Iterator, typename... Args>
-    static void run (Args... args) {}
+template<template<typename>class Comp>
+struct filter <_private::_sentinel, Comp> {
+    using type = _private::_sentinel;
 };
 
 }
 
-#endif//__typelist_algorithm_for_each_h__
+#endif//__typelist_algorithm_filter_h__

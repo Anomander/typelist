@@ -23,10 +23,7 @@
 #ifndef __tst_reverse_test_hpp__
 #define __tst_reverse_test_hpp__
 
-#include "list.h"
-#include "algorithm.h"
-
-using namespace typelist;
+#include "test_common.h"
 
 using reverse_test_list = list <int, char, float>;
 

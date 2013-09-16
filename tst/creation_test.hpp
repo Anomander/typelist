@@ -23,11 +23,7 @@
 #ifndef __tst_creation_test_hpp__
 #define __tst_creation_test_hpp__
 
-#include "list.h"
-#include "algorithm.h"
-#include "utility.h"
-
-using namespace typelist;
+#include "test_common.h"
 
 TEST(creation_tests, TestSimpleCreate) {
     using l0 = list <int>;

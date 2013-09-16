@@ -20,13 +20,10 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#ifndef __tst_erase_erase_all_test_hpp__
-#define __tst_erase_erase_all_test_hpp__
+#ifndef __tst_erase_test_hpp__
+#define __tst_erase_test_hpp__
 
-#include "list.h"
-#include "algorithm.h"
-
-using namespace typelist;
+#include "test_common.h"
 
 using test_list = list <int, char, int, float, double, list<long long, long>>;
 
@@ -114,4 +111,32 @@ TEST(erase_all_tests, TestEraseAllPreservesOrder) {
     EXPECT_EQ(true, equals);
 }
 
-#endif//__tst_erase_erase_all_test_hpp__
+TEST(erase_at_tests, TestSimple) {
+    using l = list<int, char, int>;
+
+    using list1 = typename erase_at <0, l> ::type;
+    EXPECT_EQ(2, length<list1>::value);
+    bool equals = equal <
+        list1, 
+        list<char, int>
+    >::value;
+    EXPECT_EQ(true, equals);
+
+    using list2 = typename erase_at <1, l> ::type;
+    EXPECT_EQ(2, length<list2>::value);
+    equals = equal <
+        list2, 
+        list<int, int>
+    >::value;
+    EXPECT_EQ(true, equals);
+
+    using list3 = typename erase_at <2, l> ::type;
+    EXPECT_EQ(2, length<list3>::value);
+    equals = equal <
+        list3, 
+        list<int, char>
+    >::value;
+    EXPECT_EQ(true, equals);
+}
+
+#endif//__tst_erase_test_hpp__

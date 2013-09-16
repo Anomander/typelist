@@ -23,10 +23,8 @@
 #ifndef __tst_sort_test_hpp__
 #define __tst_sort_test_hpp__
 
-#include "list.h"
-#include "algorithm.h"
+#include "test_common.h"
 
-using namespace typelist;
 struct foo {};
 struct bar { int i; };
 
@@ -34,17 +32,8 @@ using sort_test_list = list <
     long long, bar, char, int, double, foo, char, float, long, foo, int, bar
 >;
 
-namespace Sorts {
-    template <typename T, typename U>
-    struct CompareBySize {
-        enum {
-            value = sizeof(T) < sizeof(U)
-        };
-    };
-}
-
 TEST(sort_tests, SimpleTest) {
-    using f = sort < sort_test_list, Sorts::CompareBySize >::type;
+    using f = sort < sort_test_list, test_helpers::CompareBySize >::type;
     EXPECT_EQ(length<sort_test_list>::value, length<f>::value);
     bool eq = equal<
         f, 
@@ -58,7 +47,7 @@ TEST(sort_tests, SimpleTest) {
 TEST(sort_tests, SortEmpty) {
     using f = sort < 
         erase <int, list<int>>::type, 
-        Sorts::CompareBySize
+        test_helpers::CompareBySize
     >::type;
     EXPECT_EQ(0, length<f>::value);
 }

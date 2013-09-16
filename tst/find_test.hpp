@@ -23,56 +23,39 @@
 #ifndef __tst_find_test_hpp__
 #define __tst_find_test_hpp__
 
-#include "list.h"
-#include "algorithm.h"
-
-using namespace typelist;
+#include "test_common.h"
 
 using find_test_list = list <char, double, int, float, list<long long, long>>;
 
-namespace Finders {
-    template<typename T>
-    struct FindGreaterThan4 {
-        enum { value = sizeof(T) > 4 };  
-    };
-    template<typename T>
-    struct NoneShallPassMe {
-        enum { value = false };
-    };
-    template<typename T>
-    struct FindInt {
-        enum { value = std::is_same<T, int>::value };  
-    };
-}
 TEST(find_tests, SimpleTest) {
-    using f = find <find_test_list, Finders::FindInt>::type;
+    using f = find <find_test_list, test_helpers::FindInt>::type;
     EXPECT_TRUE(f::valid);
     auto eq = std::is_same<f::type, int>::value;
     EXPECT_TRUE(eq);
 }
 
 TEST(find_tests, FindEmpty) {
-    using f = find <find_test_list, Finders::NoneShallPassMe>::type;
+    using f = find <find_test_list, test_helpers::NoneShallPassMe>::type;
     EXPECT_FALSE(f::valid);
 }
 
 TEST(find_tests, FindOnEmptyList) {
-    using f = filter <find_test_list, Finders::NoneShallPassMe>::type;
+    using f = filter <find_test_list, test_helpers::NoneShallPassMe>::type;
     EXPECT_EQ(0, length<f>::value);
 
-    using f2 = find <f, Finders::FindInt>::type;
+    using f2 = find <f, test_helpers::FindInt>::type;
     EXPECT_FALSE(f2::valid);
 }
 
 TEST(find_tests, FindReturnsFirstEntry) {
-    using f = find <find_test_list, Finders::FindGreaterThan4>::type;
+    using f = find <find_test_list, test_helpers::GreaterThan4Bytes>::type;
     EXPECT_TRUE(f::valid);
     auto eq = std::is_same<f::type, double>::value;
     EXPECT_TRUE(eq);
 
     using list2 = typename erase_all <double, find_test_list>::type;
 
-    using f2 = find <list2, Finders::FindGreaterThan4>::type;
+    using f2 = find <list2, test_helpers::GreaterThan4Bytes>::type;
     EXPECT_TRUE(f2::valid);
     eq = std::is_same<f2::type, long long>::value;
     EXPECT_TRUE(eq);

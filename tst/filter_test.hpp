@@ -23,41 +23,27 @@
 #ifndef __tst_filter_test_hpp__
 #define __tst_filter_test_hpp__
 
-#include "list.h"
-#include "algorithm.h"
-
-using namespace typelist;
+#include "test_common.h"
 
 using filter_test_list = list <int, char, float, double, list<long long, long>>;
 
-namespace Filters {
-    template<typename T>
-    struct FilterLessThan4 {
-        enum { value = sizeof(T) < 4 };  
-    };
-
-    template<typename T>
-    struct NoneShallPassMe {
-        enum { value = false };
-    };
-}
 TEST(filter_tests, SimpleTest) {
-    using f = filter <filter_test_list, Filters::FilterLessThan4>::type;
+    using f = filter <filter_test_list, test_helpers::LessThan4Bytes>::type;
     EXPECT_EQ(1, length<f>::value);
     bool eq = equal<f, list<char>>::value;
     EXPECT_TRUE(eq);
 }
 
 TEST(filter_tests, FilterEmpty) {
-    using f = filter <filter_test_list, Filters::NoneShallPassMe>::type;
+    using f = filter <filter_test_list, test_helpers::NoneShallPassMe>::type;
     EXPECT_EQ(0, length<f>::value);
 }
 
 TEST(filter_tests, FilterOnEmptyList) {
-    using f = filter <filter_test_list, Filters::NoneShallPassMe>::type;
+    using f = filter <filter_test_list, test_helpers::NoneShallPassMe>::type;
     EXPECT_EQ(0, length<f>::value);
 
-    using f2 = filter <f, Filters::FilterLessThan4>::type;
+    using f2 = filter <f, test_helpers::LessThan4Bytes>::type;
     EXPECT_EQ(0, length<f2>::value);
 }
 

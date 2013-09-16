@@ -20,43 +20,19 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#ifndef __typelist_algorithm_reverse_h__
-#define __typelist_algorithm_reverse_h__
-
-#include "_private.h"
-
-namespace typelist {
+#ifndef __typelist_algorithm_algorithm_h__
+#define __typelist_algorithm_algorithm_h__
 
 /**
- * Reverses the provided list.
- * Result is the list containing the same elements
- * in reverse order.
+ * Shortcut include of all available algorithms
  */
-template <typename TL> struct reverse;
+#include "typelist/algorithm/equal.h"
+#include "typelist/algorithm/erase.h"
+#include "typelist/algorithm/filter.h"
+#include "typelist/algorithm/find.h"
+#include "typelist/algorithm/for_each.h"
+#include "typelist/algorithm/map.h"
+#include "typelist/algorithm/reverse.h"
+#include "typelist/algorithm/sort.h"
 
-/**
- * General case.
- * Recurses to reverse the tail, then appends
- * the head at the end.
- */
-template<typename Head, typename... Tail>
-struct reverse<list<Head, Tail...>> {
-    using type = typename _private::_make_list< 
-        typename reverse < 
-            typename list <Head, Tail...> :: tail
-        > :: type, 
-        Head
-    > :: type;
-};
-
-/**
- * Specialization to end recursion.
- */
-template<>
-struct reverse<_private::_sentinel> {
-    using type = _private::_sentinel;
-};
-
-}
-
-#endif//__typelist_algorithm_reverse_h__
+#endif//__typelist_algorithm_algorithm_h__

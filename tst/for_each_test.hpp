@@ -23,42 +23,13 @@
 #ifndef __tst_for_each_test_hpp__
 #define __tst_for_each_test_hpp__
 
-#include "list.h"
-#include "algorithm.h"
-
-#include <typeinfo>
-#include <memory>
-#include <cxxabi.h>
-
-using namespace typelist;
+#include "test_common.h"
 
 using for_each_list = list <int, char, float, double, list<long long, long>>;
 
-namespace ForEachHelpers {
-    struct Iterator {
-    private:
-        static std::string demangle(const char* name) {
-            int status = -4; // some arbitrary value to eliminate the compiler warning
-
-            // enable c++11 by passing the flag -std=c++11 to g++
-            std::unique_ptr<char, void(*)(void*)> res {
-                abi::__cxa_demangle(name, NULL, NULL, &status),
-                std::free
-            };
-
-            return (status==0) ? res.get() : name ;
-        }
-    public:
-        template<typename T>
-        static void run (std::vector<std::string>& vec) {
-            vec.push_back(demangle(typeid(T).name()));
-        }
-    };
-}
-
 TEST(for_each_tests, SimpleTest) {
     std::vector<std::string> v;
-    for_each <for_each_list> :: run <ForEachHelpers::Iterator> (std::ref(v));
+    for_each <for_each_list> :: run <test_helpers::Iterator> (std::ref(v));
     EXPECT_EQ(v.size(), length<for_each_list>::value);
     EXPECT_EQ("int", v[0]);
     EXPECT_EQ("char", v[1]);
@@ -71,7 +42,7 @@ TEST(for_each_tests, SimpleTest) {
 TEST(for_each_tests, TestEmpty) {
     std::vector<std::string> v;
     for_each <erase<int, list<int>>::type> 
-    :: run <ForEachHelpers::Iterator> (std::ref(v));
+    :: run <test_helpers::Iterator> (std::ref(v));
     EXPECT_EQ(0, v.size());
 }
 

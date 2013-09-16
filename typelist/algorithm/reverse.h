@@ -20,54 +20,43 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#ifndef __typelist_algorithm_filter_h__
-#define __typelist_algorithm_filter_h__
+#ifndef __typelist_algorithm_reverse_h__
+#define __typelist_algorithm_reverse_h__
 
-#include "_private.h"
+#include "typelist/_private.h"
 
 namespace typelist {
 
 /**
- * Creates the list from the provided one which only contains
- * elements that passed the provided filter.
- * The format of the filter is expected to be like this:
- *
- * template<typename T>
- * struct|class Filter {
-  *   enum { value = true|false|0|non-0 };
- * };
+ * Reverses the provided list.
+ * Result is the list containing the same elements
+ * in reverse order.
  */
-template<typename TL, template<typename>class Comp> struct filter;
+template <typename TL> struct reverse;
 
 /**
  * General case.
- * Filters the head and recurses into the tail.
+ * Recurses to reverse the tail, then appends
+ * the head at the end.
  */
-template<template<typename>class Comp, typename T, typename... Args>
-struct filter <list<T, Args...>, Comp> {
-private:
-    using next = 
-        typename filter <typename list<T, Args...> :: tail, Comp> :: type;
-public:
-    using type =    
-        typename std::conditional <
-            Comp<T> :: value,
-            typename _private::_make_list < T, next > :: type,
-            typename _private::_make_list < 
-                typename _private::_head<next> :: type, 
-                typename _private::_tail<next> :: type 
-            > :: type
-        > :: type;
+template<typename Head, typename... Tail>
+struct reverse<list<Head, Tail...>> {
+    using type = typename _private::_make_list< 
+        typename reverse < 
+            typename list <Head, Tail...> :: tail
+        > :: type, 
+        Head
+    > :: type;
 };
 
 /**
  * Specialization to end recursion.
  */
-template<template<typename>class Comp>
-struct filter <_private::_sentinel, Comp> {
+template<>
+struct reverse<_private::_sentinel> {
     using type = _private::_sentinel;
 };
 
 }
 
-#endif//__typelist_algorithm_filter_h__
+#endif//__typelist_algorithm_reverse_h__

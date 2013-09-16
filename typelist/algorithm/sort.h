@@ -54,6 +54,12 @@ template <typename TL, template<typename,typename>class Comp> struct sort;
  * Places the element in the head of the result.
  * Recurses to sort the remainder and appends it as tail.
  *
+ * NOTE: Sort will not fuction properly if the list contains
+ *       heterogenous items relative to the comparison 
+ *       operation used, i.e. items that can't directly be
+ *       compared (e.g. classes from different heirarchy 
+ *       branches, if using std::is_base_of as comparator).
+ * 
  * Sort is O(n^2).
  */
 template <typename TL, template<typename,typename>class Comp>
